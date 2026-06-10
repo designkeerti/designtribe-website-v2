@@ -5,16 +5,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        page: "#ffffff",
-        ink: "#111111",
-        muted: "#545454",
-        line: "#d6dce5",
-        paper: "#fbfbf7",
-        accent: "#e9e9d2",
-        brand: "#00694e"
+        page: "var(--page-bg)",
+        surface: "var(--surface-primary)",
+        card: "var(--surface-card)",
+        panel: "var(--surface-panel)",
+        visual: "var(--surface-visual)",
+        ink: "var(--text-primary)",
+        muted: "var(--text-secondary)",
+        border: "var(--border-primary)",
+        accent: "var(--accent)"
       },
       fontFamily: {
-        sans: ['"Helvetica Neue"', "Arial", "sans-serif"]
+        sans: ['"Inter"', '"Helvetica Neue"', "Arial", "sans-serif"]
       }
     }
   },

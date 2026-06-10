@@ -1,29 +1,10 @@
-import {
-  Banknote,
-  Boxes,
-  Brain,
-  CircleSlash,
-  ClipboardList,
-  Flower2,
-  Monitor,
-  Package,
-  Presentation,
-  Recycle,
-  ShoppingCart,
-  Sprout,
-  Sparkles,
-  Truck,
-  Utensils
-} from "lucide-react";
-import type { LucideIcon } from "lucide-react";
-
 export type Service = {
   title: string;
   copy: string;
 };
 
 export type HumanAiItem = Service & {
-  Icon: LucideIcon;
+  iconSrc?: string;
 };
 
 export type ProcessRow = Service & {
@@ -31,7 +12,7 @@ export type ProcessRow = Service & {
 };
 
 export type Industry = {
-  Icon: LucideIcon;
+  iconSrc: string;
   label: string;
 };
 
@@ -41,63 +22,59 @@ export type WorkItem = {
   span?: "full";
 };
 
+const figmaAsset = (name: string) => `/assets/figma-home/${name}`;
+
 export const services: Service[] = [
   {
-    title: "Experience Design",
-    copy: "Products and experiences designed around how people think, decide, and interact."
+    title: "Branding",
+    copy: "We build brands that do more than exist -\nthey captivate, endure, and lead."
   },
   {
-    title: "Research & Strategy",
-    copy: "Clarity before creation — turning business goals, user needs, and ideas into a focused direction."
+    title: "Rebranding",
+    copy: "Every great brand needs to evolve.\nLet's make sure yours evolves on purpose."
+  },
+  {
+    title: "UX + UI Design",
+    copy: "Research-led. Rigorously tested.\nDesigned to be felt, not just seen."
+  },
+  {
+    title: "Website Design + Development",
+    copy: "Craft an accessible web presence that\nconnects deeply and turns browsers into believers."
+  },
+  {
+    title: "AI Product + Software Design",
+    copy: "Designing for AI is a new discipline.\nMost teams are improvising. We're not."
+  },
+  {
+    title: "Design Systems + Frameworks",
+    copy: "Scale without chaos. Build once, build right,\nand never start from scratch again."
+  },
+  {
+    title: "Content + Marketing Design",
+    copy: "Fuel your growth with creative that earns attention\nand demands action."
   },
   {
     title: "Presentation Design",
-    copy: "Business stories shaped into sharp, high-impact presentations for sales, leadership, and growth."
-  },
-  {
-    title: "Communication Design",
-    copy: "Visual systems and content experiences that help businesses explain, launch, and connect better."
-  },
-  {
-    title: "Development",
-    copy: "Websites, interfaces, and platforms built with design precision and technical depth."
-  },
-  {
-    title: "Sales & Marketing",
-    copy: "Digital assets and workflows that help businesses reach, convert, and support customers."
+    copy: "Your ideas deserve a stage worthy of them.\nWe build that stage."
   }
 ];
 
 export const humanAiItems: HumanAiItem[] = [
   {
-    Icon: Sparkles,
-    title: "Research & Understanding",
-    copy: "Turning complex information into clearer insight."
+    title: "We design AI products.",
+    copy: "We have deep experience designing AI-native applications — agentic interfaces, LLM-powered tools, intelligent dashboards. We understand what AI can and cannot do at a product level, not just a conceptual one."
   },
   {
-    Icon: ClipboardList,
-    title: "Content & Communication",
-    copy: "Shaping sharper messages, narratives, and business stories."
+    title: "We use AI intelligently.",
+    copy: "We use AI tools in our practice where they genuinely accelerate quality work. We never use them as a substitute for human thinking, human empathy, or the irreducible craft of design."
   },
   {
-    Icon: CircleSlash,
-    title: "Design & Prototyping",
-    copy: "Exploring faster, testing ideas, and building stronger systems."
+    title: "We put the human back in the loop.",
+    copy: "In a world where AI is everywhere, the studios that will matter are those that restore what automation strips out: warmth, character, intention, and the quiet confidence of something made by people who cared."
   },
   {
-    Icon: Presentation,
-    title: "Presentations & Storytelling",
-    copy: "Making complex business communication clearer and more impactful."
-  },
-  {
-    Icon: Monitor,
-    title: "Development & Automation",
-    copy: "Supporting faster builds, smarter workflows, and connected systems."
-  },
-  {
-    Icon: Boxes,
-    title: "Improvement",
-    copy: "Helping digital experiences evolve with feedback and usage."
+    title: "We create economic value by doing so.",
+    copy: "Human-centred design isn't a soft ideal — it drives hard outcomes. Higher conversion, stronger retention, deeper loyalty, faster trust. The ROI of great design is real, and we are fluent in making that case."
   }
 ];
 
@@ -115,7 +92,7 @@ export const processRows: ProcessRow[] = [
   {
     number: "03",
     title: "Build",
-    copy: "Products, websites, presentations, and communication brought to life with design and technology."
+    copy: "Products, websites, presentations, and communication brought to life with design."
   },
   {
     number: "04",
@@ -125,16 +102,12 @@ export const processRows: ProcessRow[] = [
 ];
 
 export const industries: Industry[] = [
-  { Icon: Brain, label: "Artificial Intelligence" },
-  { Icon: ShoppingCart, label: "Retail & Distribution" },
-  { Icon: Banknote, label: "Banking" },
-  { Icon: Package, label: "Shipping and Mailing" },
-  { Icon: Truck, label: "Logistics" },
-  { Icon: Monitor, label: "Education" },
-  { Icon: Utensils, label: "Food" },
-  { Icon: Boxes, label: "SAP Solutions" },
-  { Icon: Recycle, label: "Sustainability" },
-  { Icon: Sprout, label: "Agriculture" }
+  { iconSrc: figmaAsset("icon-ai.svg"), label: "Artificial Intelligence" },
+  { iconSrc: figmaAsset("icon-retail.svg"), label: "Retail & Distribution" },
+  { iconSrc: figmaAsset("icon-banking.svg"), label: "Banking & Finance" },
+  { iconSrc: figmaAsset("icon-shipping.svg"), label: "Shipping and Mailing" },
+  { iconSrc: figmaAsset("icon-food.svg"), label: "Food & Beverage" },
+  { iconSrc: figmaAsset("icon-sustainability.svg"), label: "Sustainability" }
 ];
 
 export const workItems: WorkItem[] = [
@@ -144,12 +117,12 @@ export const workItems: WorkItem[] = [
     span: "full"
   },
   {
-    title: "Modern e-commerce platform",
-    meta: "WareIQ - Logistics"
-  },
-  {
     title: "A trustworthy security system",
     meta: "Prometric - Education"
+  },
+  {
+    title: "Modern e-commerce platform",
+    meta: "WareIQ - Logistics"
   },
   {
     title: "AI that knows your business",
@@ -168,12 +141,12 @@ export const workItems: WorkItem[] = [
 
 export const humanIntroItems: HumanAiItem[] = [
   {
-    Icon: Flower2,
+    iconSrc: figmaAsset("icon-guided-humans.svg"),
     title: "Guided by Humans",
     copy: "We lead with research, strategy, creativity, and craft — making sure every decision is shaped by people, not just tools."
   },
   {
-    Icon: Sparkles,
+    iconSrc: figmaAsset("icon-powered-ai.svg"),
     title: "Powered by AI",
     copy: "AI supports our process across research, content, design systems, prototypes, and execution faster without losing clarity."
   }
