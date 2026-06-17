@@ -1,4 +1,4 @@
-import { HomePage } from "./components/HomePage";
+import { Home } from "./components/Home";
 import { ServicePage } from "./components/ServicePage";
 
 export default function App() {
@@ -8,5 +8,5 @@ export default function App() {
     return <ServicePage slug={path.replace("/services/", "")} />;
   }
 
-  return <HomePage />;
+  return <Home />;
 }
